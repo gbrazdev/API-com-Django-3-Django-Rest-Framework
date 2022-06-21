@@ -8,7 +8,7 @@ class AlunosViewSet(viewsets.ModelViewSet):
     queryset = Alunos.objects.all()
     serializer_class = AlunoSerializer
 
-class AlunosViewSet(viewsets.ModelViewSet):
+class CursosViewSet(viewsets.ModelViewSet):
     """Exisbindo todos os cusros"""
     queryset = Cursos.objects.all()
     serializer_class = CursoSerializer

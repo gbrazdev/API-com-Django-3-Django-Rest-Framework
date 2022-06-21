@@ -14,13 +14,20 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 # from thycotic_api.views import getData
-from escola.views import alunos
+from escola.views import AlunosViewSet, CursoViewset
+from rest_framework import routes
+
+
+router = router.DefaultRouter()
+router.register('alunos', AlunosViewSet, basename='Alunos')
+router.register('cursos', AlunosViewSet, basename='Cursos')
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('alunos/',alunos),
+    path('', include(router.urls)),
+    # path('alunos/', alunos),
     # path('token', getData),
 ]
